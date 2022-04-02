@@ -1,2 +1,2 @@
 # StoreTextsLocal-Storage
-Project 3- JavaScript Course - Store Texts in Local Storage
+Project 4 - JavaScript Course - Store Texts in Local Storage
