@@ -1,0 +1,241 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: #31404e;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+}
+
+/* Tweet container */
+
+.tweetContainer,
+.tweetsContainer{
+    width: 600px;
+    background-color: #15202b;
+}
+
+.tweetContainer{
+    height: 278px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: "header header"
+                         "picture tweet";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+}
+
+svg{
+    width: 20px;
+    height: 20px;
+}
+
+.tweet__user{
+    display: grid;
+    grid-area: picture;
+}
+
+.tweet__close{
+    width: 100%;
+    height: 53px;
+    display: grid;
+    grid-area: header;
+    grid-column: 1 / 3;
+    align-content: center;
+}
+
+#btnCloseTweet{
+    fill: rgb(239, 243, 244);
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+
+.tweet{
+    display: grid;
+    margin-right: 16px;
+}
+
+.tweet__footer__accessories__icon,
+.tweet__access__icon{
+    fill: rgb(29, 155, 240);
+}
+
+.tweet__user{
+    margin: 8px 14px 0 16px;
+}
+
+.tweet__user__profilepicture{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+#tweet{
+    width: 504px;
+    height: 120px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    resize: none;
+}
+
+.tweet__access__container{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.tweet__access{
+    color: rgb(29, 155, 240);
+}
+
+.tweet__access__icon{
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.tweet__access__text{
+    font-size: 1.4rem;
+}
+
+/* Footer */
+.tweet__footer{
+    padding-top: 10px;
+    border-top: 1.5px solid rgb(56, 68, 77);
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 5px;
+}
+
+.tweet__footer__accessories{
+    display: flex;
+    position: relative;
+    left: -8px;
+}
+
+.tweet__footer__accessories__icon{
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tweet__footer__accessories__icon:hover{
+    background-color: rgba(29, 155, 240, 0.2);
+}
+
+#btnPostTweet{
+    width: fit-content;
+    padding: 0 16px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    height: 34px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+/* Tweets Contianer */
+
+.tweetsContainer{
+    max-height: 90%;
+    overflow-y: none;
+}
+
+.postTweet{
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    cursor: pointer;
+    border: 1px solid #455058;
+}
+
+.postTweet__content__footer{
+    margin-top: 12px;
+}
+
+.postTweet__content__footer__icon{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center;
+}
+
+.postTweet__content__footer__icon__number{
+    display: grid;
+    place-self: center;
+    font-size: 1.3rem;
+}
+
+.postTweet__content__footer__icon svg, 
+.btnMoreOptions{
+    width: 18.75px;
+    height: 18.75px;
+    fill: rgb(139, 152, 165);
+}
+
+.postTweet__content__footer__icon__number{
+    color: rgb(139, 152, 165);
+}
+
+.user-information,
+.postTweet__content__main{
+    font-size: 1.5rem;
+}
+
+.user{
+    font-weight: bold;
+}
+
+.user,
+.postTweet__content__main{
+    color: white;
+}
+
+.username, .timePostTweet, .dot{
+    color: rgb(139, 152, 165);
+}
+
+.postTweet__content__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.postTweet__content__footer{
+    display: grid;
+    grid-template-columns: repeat(5, 47px);
+    gap: 40px;
+}
