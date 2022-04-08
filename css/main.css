@@ -14,6 +14,10 @@ body{
     background-color: #31404e;
 }
 
+li{
+    list-style: none;
+}
+
 main{
     width: 100vw;
     height: 100vh;
@@ -238,4 +242,50 @@ svg{
     display: grid;
     grid-template-columns: repeat(5, 47px);
     gap: 40px;
+}
+
+
+/* Options */
+
+.tweetOptionsContainer{
+    position: relative;
+}
+
+.tweetOptions{
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    box-shadow: rgb(136 153 166 / 20%) 0px 0px 15px, rgb(136 153 166 / 15%) 0px 0px 3px 1px;
+    width: auto;
+    background-color: #15202b;
+    border-radius: 4px;
+}
+
+.tweetOptions__list__item{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    height: 52px;
+    width: 325.81px;
+    padding: 16px;
+    color: white;
+}
+
+.tweetOptions__list__item:hover{
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tweetOptions__list__item-delete{
+    color: rgb(244, 33, 46);
+}
+
+.tweetOptions__list__item__icon{
+    margin-right: 12px;
+    fill: rgb(139, 152, 165);
+}
+
+.tweetOptions__list__item-delete__icon{
+    fill: rgb(244, 33, 46);
 }
