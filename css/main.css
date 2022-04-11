@@ -161,13 +161,22 @@ svg{
     padding: 0 16px;
     border: 1px solid rgba(0, 0, 0, 0);
     height: 34px;
-    cursor: pointer;
     outline: none;
     border-radius: 20px;
     background-color: rgb(29, 155, 240);
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+.btnDisabled{
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.btnEnabled{
+    cursor: pointer;
+    opacity: 1;
 }
 
 
