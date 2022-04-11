@@ -209,6 +209,15 @@ svg{
     fill: rgb(139, 152, 165);
 }
 
+.btnMoreOptions:hover{
+    fill: rgb(29, 155, 240);
+}
+
+.moreOptionsRounder{
+    width: 34.75px;
+    height: 34.75px;
+}
+
 .postTweet__content__footer__icon__number{
     color: rgb(139, 152, 165);
 }
@@ -249,6 +258,10 @@ svg{
 
 .tweetOptionsContainer{
     position: relative;
+    width: 34.75px;
+    height: 34.75px;
+    display: grid;
+    place-content: center;
 }
 
 .tweetOptions{
@@ -288,4 +301,8 @@ svg{
 
 .tweetOptions__list__item-delete__icon{
     fill: rgb(244, 33, 46);
+}
+
+.no-display{
+    display: none;
 }
