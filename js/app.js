@@ -2,6 +2,8 @@
 const formulario = document.querySelector('#formulario');
 const listaTweets = document.querySelector('#lista-tweets');
 const btnPostTweet = document.querySelector('#btnPostTweet');
+const btnCloseTweetOptions = document.querySelector('#btnCloseTweetOptions');
+let tweetSelected;
 let tweetArea = document.querySelector('#tweet');
 let tweets = [];
 let sendTweet = false;
@@ -17,6 +19,8 @@ function eventListeners(){
 
     // Cuando el usuario esta escribiendo un tweet 
     tweetArea.addEventListener('keyup', escribirTweet);
+
+    btnCloseTweetOptions.addEventListener('click', closeTweetOptionsBackground);
 
     // Cuando el documento esta listo
     document.addEventListener('DOMContentLoaded', () => {
@@ -159,7 +163,7 @@ function crearHTML(){
 
     sincronizarStorage();
 
-    prueba();
+    setTweetOptionMenu();
 }
 
 // Agrega los Tweets actuales a LocalStorage
@@ -174,7 +178,7 @@ function limpiarHTML(){
     }
 }
 
-function prueba(){
+function setTweetOptionMenu(){
     let tweetsOptions = document.querySelectorAll('.tweetOptionsContainer');
 
     
@@ -183,11 +187,25 @@ function prueba(){
         let btnMoreOptions = tweetOption.children[0];
         let optionMenu = tweetOption.children[1];
         btnMoreOptions.addEventListener('click', (e) => openOptionMenu(e, optionMenu, true) );
-
-
     });
 }
+
 function openOptionMenu(e, optionMenu, value){
+    tweetSelected = optionMenu;
+    let btnDeleteTweet = tweetSelected.children[0].children[0];
+
+    btnDeleteTweet.addEventListener('click', eliminarTweet);
+
+    tweetSelected.classList.remove('no-display');
+    btnCloseTweetOptions.classList.remove('no-display');
+
+}
+
+function closeTweetOptionsBackground(){
+    btnCloseTweetOptions.classList.add('no-display');
+    tweetSelected.classList.add('no-display');
+}
+
+function eliminarTweet(e){
     console.log(e.target);
-    console.log(optionMenu.classList.remove('no-display'));
 }

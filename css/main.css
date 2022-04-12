@@ -286,6 +286,7 @@ svg{
     width: auto;
     background-color: #15202b;
     border-radius: 4px;
+    z-index: 5;
 }
 
 .tweetOptions__list__item{
@@ -319,4 +320,14 @@ svg{
 
 .no-display{
     display: none;
+}
+
+.tweetOptions__Background{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0;
+    background-color: transparent;
+    z-index: 5;
 }
