@@ -183,8 +183,8 @@ svg{
 /* Tweets Contianer */
 
 .tweetsContainer{
-    max-height: 90%;
-    overflow-y: none;
+    max-height: 98%;
+    overflow-y: auto;
 }
 
 .postTweet{
