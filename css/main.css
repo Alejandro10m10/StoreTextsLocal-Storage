@@ -188,8 +188,7 @@ svg{
 .tweetsContainer{   
     height: calc(100vh - 30px);
     overflow-y: auto;
-    display: grid;
-    align-content: center;
+
 }
 
 .postTweet{

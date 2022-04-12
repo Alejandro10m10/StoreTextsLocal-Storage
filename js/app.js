@@ -155,6 +155,7 @@ function crearHTML(){
                 </div>
             `;
             postTweet.classList.add('postTweet');
+            postTweet.setAttribute('data-id', `${tweet.id}`)
 
             // Insertarlo en el html
             listaTweets.appendChild(postTweet);
@@ -180,25 +181,22 @@ function limpiarHTML(){
 
 function setTweetOptionMenu(){
     let tweetsOptions = document.querySelectorAll('.tweetOptionsContainer');
-
-    
     tweetsOptions.forEach( tweetOption=> {
-
+        let id = parseInt(tweetOption.parentElement.parentElement.parentElement.getAttribute('data-id'));
         let btnMoreOptions = tweetOption.children[0];
         let optionMenu = tweetOption.children[1];
-        btnMoreOptions.addEventListener('click', (e) => openOptionMenu(e, optionMenu, true) );
+        btnMoreOptions.addEventListener('click', () => openOptionMenu(optionMenu, id) );
     });
 }
 
-function openOptionMenu(e, optionMenu, value){
+function openOptionMenu(optionMenu, id){
     tweetSelected = optionMenu;
     let btnDeleteTweet = tweetSelected.children[0].children[0];
 
-    btnDeleteTweet.addEventListener('click', eliminarTweet);
+    btnDeleteTweet.addEventListener('click', () => eliminarTweet(id) );
 
     tweetSelected.classList.remove('no-display');
     btnCloseTweetOptions.classList.remove('no-display');
-
 }
 
 function closeTweetOptionsBackground(){
@@ -206,6 +204,7 @@ function closeTweetOptionsBackground(){
     tweetSelected.classList.add('no-display');
 }
 
-function eliminarTweet(e){
-    console.log(e.target);
+function eliminarTweet(id){
+    tweets = tweets.filter( tweet => tweet.id !== id);
+    crearHTML();
 }
